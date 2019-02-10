@@ -1,3 +1,4 @@
 export const ADMIN = "ADMIN";
-export const INSTRUCTOR = "INSTRUCTOR";
-export const STUDENT = "STUDENT";
+export const FACULTY = "FACULTY";
+export const CAPTAIN = "CAPTAIN";
+export const COMPETITOR = "COMPETITOR";

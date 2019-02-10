@@ -21,7 +21,7 @@ class HomePage extends Component {
 
   componentDidMount() {
     const { firebase } = this.props;
-    firebase.users().on("value", snapshot => {
+    firebase.competitors().on("value", snapshot => {
       this.setState({
         users: snapshot.val()
       });
@@ -29,16 +29,16 @@ class HomePage extends Component {
   }
 
   componentWillUnmount() {
-    this.props.firebase.users().off();
+    this.props.firebase.competitors().off();
   }
 
   render() {
     return (
       <main id="home">
         <p>
-          Welcome to
-          <br />
-          <span id="title">Question Air</span>
+          <span id="title">
+            HAW<span id="ku">KU</span>
+          </span>
         </p>
       </main>
     );

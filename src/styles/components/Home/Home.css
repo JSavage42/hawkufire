@@ -2,18 +2,22 @@
   align-items: center;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 #home p {
-  color: var(--crimson);
   font-size: 3rem;
 }
 
 #home #title {
-  color: var(--ku-blue);
-  font-family: "Times New Roman", serif;
-  text-shadow: 2px 2px 5px #000;
+  color: #ddd;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-shadow: 5px 2px 5px #770000;
+}
+
+#home #title #ku {
+  color: #770000;
+  text-shadow: 5px 2px 5px #ddd;
 }
 
 @media (min-width: 650px) {
@@ -24,6 +28,6 @@
 
   #home p {
     font-size: 10rem;
-    text-shadow: 2px 2px 5px var(--ku-blue);
+    text-shadow: 0 2px 0 #000;
   }
 }
