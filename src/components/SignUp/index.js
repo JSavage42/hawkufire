@@ -43,7 +43,7 @@ class SignUpFormBase extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
-  onSubmit = (event) => {
+  onSubmit = event => {
     const {
       username,
       email,
@@ -62,9 +62,9 @@ class SignUpFormBase extends Component {
 
     firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
-      .then((authUser) => {
+      .then(authUser => {
         // Create a user in your Firebase real time database
-        return firebase.user(authUser.user.uid).set({
+        return firebase.competitor(authUser.user.uid).set({
           username,
           email,
           requests,
@@ -77,7 +77,7 @@ class SignUpFormBase extends Component {
         this.setState({ ...INITIAL_STATE });
         history.push(ROUTES.HOME);
       })
-      .catch((error) => {
+      .catch(error => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
           error.message = ERROR_MSG_ACCOUNT_EXISTS;
         }
@@ -88,11 +88,11 @@ class SignUpFormBase extends Component {
     event.preventDefault();
   };
 
-  onChange = (event) => {
+  onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  onChangeCheckbox = (event) => {
+  onChangeCheckbox = event => {
     this.setState({ [event.target.name]: event.target.checked });
   };
 

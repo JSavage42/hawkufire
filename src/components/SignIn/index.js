@@ -49,7 +49,7 @@ class SignInFormBase extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
-  onSubmit = (event) => {
+  onSubmit = event => {
     const { email, password } = this.state;
     const { firebase, history } = this.props;
 
@@ -59,14 +59,14 @@ class SignInFormBase extends Component {
         this.setState({ ...INITIAL_STATE });
         history.push(ROUTES.HOME);
       })
-      .catch((error) => {
+      .catch(error => {
         this.setState({ error });
       });
 
     event.preventDefault();
   };
 
-  onChange = (event) => {
+  onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
@@ -108,11 +108,11 @@ class SignInGoogleBase extends Component {
     this.state = { error: null };
   }
 
-  onSubmit = (event) => {
+  onSubmit = event => {
     const { firebase, history } = this.props;
     firebase
       .doSignInWithGoogle()
-      .then((socialAuthUser) => {
+      .then(socialAuthUser => {
         // Create a user in your Firebase Realtime Database too
         return firebase.user(socialAuthUser.user.uid).set({
           username: socialAuthUser.user.displayName,
@@ -124,7 +124,7 @@ class SignInGoogleBase extends Component {
         this.setState({ error: null });
         history.push(ROUTES.HOME);
       })
-      .catch((error) => {
+      .catch(error => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
           error.message = ERROR_MSG_ACCOUNT_EXISTS;
         }
@@ -155,13 +155,13 @@ class SignInFacebookBase extends Component {
     this.state = { error: null };
   }
 
-  onSubmit = (event) => {
+  onSubmit = event => {
     const { firebase, history } = this.props;
     firebase
       .doSignInWithFacebook()
-      .then((socialAuthUser) => {
+      .then(socialAuthUser => {
         // Create a user in your Firebase Realtime Database too
-        return firebase.user(socialAuthUser.user.uid).set({
+        return firebase.competitor(socialAuthUser.competitor.uid).set({
           username: socialAuthUser.additionalUserInfo.profile.name,
           email: socialAuthUser.additionalUserInfo.profile.email,
           roles: [],
@@ -171,7 +171,7 @@ class SignInFacebookBase extends Component {
         this.setState({ error: null });
         history.push(ROUTES.HOME);
       })
-      .catch((error) => {
+      .catch(error => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
           error.message = ERROR_MSG_ACCOUNT_EXISTS;
         }
@@ -202,13 +202,13 @@ class SignInTwitterBase extends Component {
     this.state = { error: null };
   }
 
-  onSubmit = (event) => {
+  onSubmit = event => {
     const { firebase, history } = this.props;
     firebase
       .doSignInWithTwitter()
-      .then((socialAuthUser) => {
+      .then(socialAuthUser => {
         // Create a user in your Firebase Realtime Database too
-        return firebase.user(socialAuthUser.user.uid).set({
+        return firebase.competitor(socialAuthUser.competitor.uid).set({
           username: socialAuthUser.additionalUserInfo.profile.name,
           email: socialAuthUser.additionalUserInfo.profile.email,
           roles: [],
@@ -218,7 +218,7 @@ class SignInTwitterBase extends Component {
         this.setState({ error: null });
         history.push(ROUTES.HOME);
       })
-      .catch((error) => {
+      .catch(error => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
           error.message = ERROR_MSG_ACCOUNT_EXISTS;
         }

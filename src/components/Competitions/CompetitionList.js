@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from "react";
-import * as ROUTES from "../../constants/routes";
-import { Link } from "react-router-dom";
+import React from 'react';
+import * as ROUTES from '../../constants/routes';
+import { Link } from 'react-router-dom';
 
 const CompetitionList = () => (
   <main id="competition_list">
