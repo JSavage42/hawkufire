@@ -4,7 +4,7 @@ const CompetitionDetails = () => (
   <main id="competition_details">
     <h1>Competition Details</h1>
     <article>
-      <p>Here be the competition details.</p>
+      <p>Here will be the competition details</p>
     </article>
   </main>
 );
