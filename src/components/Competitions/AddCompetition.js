@@ -12,21 +12,16 @@ class AddCompetition extends Component {
       numOfCompetitors: 0,
       year: 0,
       semester: '',
-      cid: '',
     };
   }
 
   onSubmit = e => {
     const { state, props } = this;
     const { firebase } = props;
-    const { name, year, semester, cid } = state;
+    const { name, year, semester } = state;
     this.setState({ cid: `${name}${semester}${year}` });
     e.preventDefault();
-    firebase
-      .competition(cid)
-      .child(`${semester}${year}`)
-      .child(`${name}`)
-      .set(state);
+    firebase.competition(semester, year, name).set(state);
 
     this.setState({
       name: '',
@@ -35,7 +30,6 @@ class AddCompetition extends Component {
       numOfCompetitors: 0,
       year: 0,
       semester: '',
-      cid: '',
     });
   };
 

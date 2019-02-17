@@ -8,30 +8,25 @@ class CompetitionList extends Component {
     super(props);
 
     this.state = {
-      competitions: null,
+      competitions: [],
       loading: true,
     };
   }
 
   componentWillMount() {
     const { firebase } = this.props;
+
     firebase.competitions().on('value', snapshot => {
       const competitionsObject = snapshot.val();
-      console.log(competitionsObject);
-      if (competitionsObject === null) {
-        return;
-      } else {
-        const competitionsList = Object.keys(competitionsObject).map(key => ({
-          ...competitionsObject[key],
-          cid: key,
-        }));
-        this.setState({
-          competitions: competitionsList,
+      if (competitionsObject !== null) {
+        Object.values(competitionsObject).forEach(value => {
+          Object.entries(value).forEach(([key, value]) =>
+            this.state.competitions.push({ [key]: value }),
+          );
         });
 
         this.setState({ loading: false });
       }
-      console.log(this.state);
     });
   }
 
@@ -42,20 +37,29 @@ class CompetitionList extends Component {
         <h1>Competitions</h1>
         <Link to={ROUTES.ADD_COMPETITION}>Add Competition</Link>
         {loading && <div>Loading...</div>}
-        {competitions && (
-          <ul>
-            {competitions.map(comp => (
-              <Link
-                to={`${ROUTES.COMPETITIONS}/edit/${comp.name}`}
-                key={comp.name}
-              >
-                <li>
-                  {comp.name} {comp.semester} {comp.year}
-                </li>
-              </Link>
-            ))}
-          </ul>
-        )}
+        {
+          <div>
+            {Object.values(
+              competitions.map(competition =>
+                Object.values(competition).map(comp => (
+                  <React.Fragment
+                    key={`${comp.name}${comp.semester}${comp.year}`}
+                  >
+                    <h2>
+                      {comp.semester}
+                      {comp.year}
+                    </h2>
+                    <p>
+                      <Link to={`/${comp.semester}${comp.year}/${comp.name}`}>
+                        {comp.name}
+                      </Link>
+                    </p>
+                  </React.Fragment>
+                )),
+              ),
+            )}
+          </div>
+        }
       </main>
     );
   }

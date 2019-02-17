@@ -98,7 +98,7 @@ class Firebase {
 
   // *** Competition API *** //
 
-  competition = cid => this.db.ref(`competitions/${cid}`);
+  competition = (semester, year, name) => this.db.ref(`competitions/${semester}${year}/${name}`);
 
   competitions = () => this.db.ref(`competitions/`);
 
