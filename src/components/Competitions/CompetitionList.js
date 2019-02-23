@@ -24,7 +24,6 @@ class CompetitionList extends Component {
             this.state.competitions.push({ [key]: value }),
           );
         });
-
         this.setState({ loading: false });
       }
     });
@@ -35,30 +34,33 @@ class CompetitionList extends Component {
     return (
       <main id="competition_list">
         <h1>Competitions</h1>
-        <Link to={ROUTES.ADD_COMPETITION}>Add Competition</Link>
-        {loading && <div>Loading...</div>}
+        <Link to={ROUTES.ADD_COMPETITION} className="btn">
+          Add Competition
+        </Link>
+        {loading && <div className="loading">Loading...</div>}
         {
-          <div>
+          <article id="competitions">
             {Object.values(
               competitions.map(competition =>
                 Object.values(competition).map(comp => (
                   <React.Fragment
                     key={`${comp.name}${comp.semester}${comp.year}`}
                   >
-                    <h2>
-                      {comp.semester}
-                      {comp.year}
-                    </h2>
                     <p>
-                      <Link to={`/${comp.semester}${comp.year}/${comp.name}`}>
-                        {comp.name}
+                      <Link
+                        to={`/competition/${comp.semester}${comp.year}/${
+                          comp.name
+                        }`}
+                      >
+                        {comp.semester}
+                        {comp.year} - {comp.name}
                       </Link>
                     </p>
                   </React.Fragment>
                 )),
               ),
             )}
-          </div>
+          </article>
         }
       </main>
     );

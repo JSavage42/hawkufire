@@ -1,42 +1,42 @@
-import React from "react";
+import React from 'react';
 
 // *** Constants *** //
-import * as ROUTES from "../../constants/routes";
+import * as ROUTES from '../../constants/routes';
 
 // *** Third-Party *** //
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch } from 'react-router-dom';
 
 // *** Styles *** //
-import "../../styles/base/App.css";
+import '../../styles/base/App.css';
 
 // *** HOC and Context *** //
-import { withAuthentication } from "../Session";
+import { withAuthentication } from '../Session';
 
 // *** Components *** //
-import HomePage from "../Home";
-import Navigation from "../Navigation";
-import SignInPage from "../SignIn";
-import SignUpPage from "../SignUp";
+import HomePage from '../Home';
+import Navigation from '../Navigation';
+import SignInPage from '../SignIn';
+import SignUpPage from '../SignUp';
 import {
   CompetitionList,
   AddCompetition,
   EditCompetition,
-  CompetitionDetails
-} from "../Competitions";
-import { TeamList, AddTeam, EditTeam, TeamDetails } from "../Teams";
+  CompetitionDetails,
+} from '../Competitions';
+import { TeamList, AddTeam, EditTeam, TeamDetails } from '../Teams';
 import {
   AnomalyList,
   AddAnomaly,
   EditAnomaly,
-  AnomalyDetails
-} from "../Anomalies";
+  AnomalyDetails,
+} from '../Anomalies';
 import {
   CompetitorList,
   AddCompetitor,
   EditCompetitor,
-  CompetitorDetails
-} from "../Competitors";
-import { ReportList, AddReport, EditReport, ReportDetails } from "../Reports";
+  CompetitorDetails,
+} from '../Competitors';
+import { ReportList, AddReport, EditReport, ReportDetails } from '../Reports';
 
 const App = () => (
   <React.Fragment>

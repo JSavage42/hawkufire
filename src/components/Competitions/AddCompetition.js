@@ -11,7 +11,7 @@ class AddCompetition extends Component {
       state: '',
       numOfCompetitors: 0,
       year: 0,
-      semester: '',
+      semester: 'Spring',
     };
   }
 
@@ -29,8 +29,10 @@ class AddCompetition extends Component {
       state: '',
       numOfCompetitors: 0,
       year: 0,
-      semester: '',
+      semester: 'Spring',
     });
+
+    this.props.history.push('/competition');
   };
 
   onChange = e => {
@@ -39,7 +41,7 @@ class AddCompetition extends Component {
 
   render() {
     const { onSubmit, onChange } = this;
-    const { name, city, state, numOfCompetitors, year } = this.state;
+    const { name, city, state, numOfCompetitors, year, semester } = this.state;
     return (
       <main id="add_competition">
         <h1>Add Competition</h1>
@@ -77,7 +79,12 @@ class AddCompetition extends Component {
               placeholder="Number of Competitors"
               required
             />
-            <select name="semester" onChange={onChange} required>
+            <select
+              name="semester"
+              onChange={onChange}
+              required
+              value={semester}
+            >
               <option value="Spring">Spring</option>
               <option value="Fall">Fall</option>
             </select>
