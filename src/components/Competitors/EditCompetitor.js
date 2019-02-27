@@ -1,5 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const EditCompetition = () => <h1>Edit Competition</h1>;
+const EditCompetitor = () => <h1>Edit Competitor</h1>;
 
-export default EditCompetition;
+export default EditCompetitor;
