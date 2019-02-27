@@ -1,0 +1,33 @@
+#home {
+  align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#home p {
+  font-size: 3rem;
+}
+
+#home #title {
+  color: #ddd;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-shadow: 5px 2px 5px #770000;
+}
+
+#home #title #ku {
+  color: #770000;
+  text-shadow: 5px 2px 5px #ddd;
+}
+
+@media (min-width: 650px) {
+  #home {
+    align-items: center;
+    justify-content: center;
+  }
+
+  #home p {
+    font-size: 10rem;
+    text-shadow: 0 2px 0 #000;
+  }
+}
