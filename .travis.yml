@@ -1,9 +1,0 @@
-language: node_js
-node_js:
- — “11.10.0”
-script:
- — echo “Deploy!!”
-install:
- — npm install -g firebase-tools
-after_success:
- — firebase deploy — project process.env.REACT_APP_PROJECT_ID  — token $process.env.CI_TOKEN.
