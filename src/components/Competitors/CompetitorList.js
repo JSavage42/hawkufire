@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
-import { withFirebase } from '../Firebase';
-import * as ROUTES from '../../constants/routes';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { withFirebase } from "../Firebase";
+import * as ROUTES from "../../constants/routes";
+import { Link } from "react-router-dom";
 
 class CompetitorList extends Component {
   state = {
     competitors: null,
-    loading: true,
+    loading: true
   };
 
   componentWillMount() {
     const { firebase } = this.props;
     this.setState({ loading: true });
-    firebase.competitors().on('value', snapshot => {
+    firebase.competitors().on("value", snapshot => {
       const competitorsObject = snapshot.val();
       if (competitorsObject === null) {
         return;
       } else {
         const competitorsList = Object.keys(competitorsObject).map(key => ({
           ...competitorsObject[key],
-          uid: key,
+          uid: key
         }));
 
         this.setState({
-          competitors: competitorsList,
+          competitors: competitorsList
         });
 
         this.setState({ loading: false });
@@ -35,7 +35,7 @@ class CompetitorList extends Component {
     const { competitors, loading } = this.state;
     return (
       <main id="competitor_list">
-        <h1>Competitors</h1>
+        <h2>Competitors</h2>
         {loading && <div>Loading...</div>}
         {competitors && (
           <ul>

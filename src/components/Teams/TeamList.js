@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import * as ROUTES from '../../constants/routes';
-import { Link } from 'react-router-dom';
-import { withFirebase } from '../Firebase';
+import React, { Component } from "react";
+import * as ROUTES from "../../constants/routes";
+import { Link } from "react-router-dom";
+import { withFirebase } from "../Firebase";
 
 class TeamList extends Component {
   state = {
     teams: null,
-    loading: true,
+    loading: true
   };
 
   componentWillMount() {
     const { firebase } = this.props;
     this.setState({ loading: true });
-    firebase.teams().on('value', snapshot => {
+    firebase.teams().on("value", snapshot => {
       const teamsObject = snapshot.val();
       console.log(teamsObject);
       if (teamsObject === null) {
@@ -20,11 +20,11 @@ class TeamList extends Component {
       } else {
         const teamsList = Object.keys(teamsObject).map(key => ({
           ...teamsObject[key],
-          uid: key,
+          uid: key
         }));
 
         this.setState({
-          teams: teamsList,
+          teams: teamsList
         });
 
         this.setState({ loading: false });
@@ -41,7 +41,7 @@ class TeamList extends Component {
         {teams && (
           <ul>
             {teams.map(team => (
-              <Link to={`${ROUTES.TEAMS}/edit/${team.name}`} key={team.name}>
+              <Link to={`${ROUTES.TEAMS}/${team.name}`} key={team.name}>
                 <li>{team.name}</li>
               </Link>
             ))}

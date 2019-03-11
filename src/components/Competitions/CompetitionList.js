@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import * as ROUTES from '../../constants/routes';
-import { Link } from 'react-router-dom';
-import { withFirebase } from '../Firebase';
+import React, { Component } from "react";
+import * as ROUTES from "../../constants/routes";
+import { Link } from "react-router-dom";
+import { withFirebase } from "../Firebase";
 
 class CompetitionList extends Component {
   constructor(props) {
@@ -9,19 +9,19 @@ class CompetitionList extends Component {
 
     this.state = {
       competitions: [],
-      loading: true,
+      loading: true
     };
   }
 
   componentWillMount() {
     const { firebase } = this.props;
 
-    firebase.competitions().on('value', snapshot => {
+    firebase.competitions().on("value", snapshot => {
       const competitionsObject = snapshot.val();
       if (competitionsObject !== null) {
         Object.values(competitionsObject).forEach(value => {
           Object.entries(value).forEach(([key, value]) =>
-            this.state.competitions.push({ [key]: value }),
+            this.state.competitions.push({ [key]: value })
           );
         });
         this.setState({ loading: false });
@@ -33,7 +33,7 @@ class CompetitionList extends Component {
     const { loading, competitions } = this.state;
     return (
       <main id="competition_list">
-        <h1>Competitions</h1>
+        <h2>Competitions</h2>
         <Link to={ROUTES.ADD_COMPETITION} className="btn">
           Add Competition
         </Link>
@@ -57,8 +57,8 @@ class CompetitionList extends Component {
                       </Link>
                     </p>
                   </React.Fragment>
-                )),
-              ),
+                ))
+              )
             )}
           </article>
         }
