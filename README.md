@@ -1,7 +1,7 @@
 # HAWKU v0.2.0
 
-[![License](https://badgen.net/license/MIT/blue)](https://github.com/jsavage42/hawkufire/blob/master/LICENSE)
-[![Twitter](https://badgen.net/twitter/follow/dadsavage42)(https://twitter.com/dadsavage42)
+[![License](https://badgen.net/license/MIT/blue)](https://github.com/jsavage42/hawkufire/blob/master/LICENSE) | 
+[![Twitter](https://badgen.net/twitter/follow/dadsavage42)](https://twitter.com/dadsavage42)
 
 1. [HAWKU v0.2.0](#hawku-v020)
    1. [Install Locally](#install-locally)
