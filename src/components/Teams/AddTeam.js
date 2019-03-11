@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
-import { withFirebase } from '../Firebase';
+import React, { Component } from "react";
+import { withFirebase } from "../Firebase";
 
 class AddTeam extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: '',
-      captain: '',
-      mem1: '',
-      mem2: '',
-      mem3: '',
-      mem4: '',
-      mem5: '',
-      mem6: '',
-      mem7: '',
-      mem8: '',
+      name: "",
+      captain: "",
+      mem1: "",
+      mem2: "",
+      mem3: "",
+      mem4: "",
+      mem5: "",
+      mem6: "",
+      mem7: "",
+      mem8: "",
+      members: ""
     };
   }
 
@@ -26,22 +27,25 @@ class AddTeam extends Component {
   onSubmit = e => {
     const { state, props } = this;
     const { firebase } = props;
-    const { name } = state;
+    const { name, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8 } = state;
 
     e.preventDefault();
+    const members = [mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8];
+    this.setState({ members });
     const tid = `${name}`;
     firebase.team(`${tid}`).set(state);
     this.setState({
-      name: '',
-      captain: '',
-      mem1: '',
-      mem2: '',
-      mem3: '',
-      mem4: '',
-      mem5: '',
-      mem6: '',
-      mem7: '',
-      mem8: '',
+      name: "",
+      captain: "",
+      mem1: "",
+      mem2: "",
+      mem3: "",
+      mem4: "",
+      mem5: "",
+      mem6: "",
+      mem7: "",
+      mem8: "",
+      members: ""
     });
   };
 
@@ -56,7 +60,7 @@ class AddTeam extends Component {
       mem5,
       mem6,
       mem7,
-      mem8,
+      mem8
     } = this.state;
     const { onSubmit, onChange } = this;
     return (

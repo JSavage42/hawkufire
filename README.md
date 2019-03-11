@@ -1,5 +1,7 @@
 # HAWKU v0.2.0
 
+[![License](https://badgen.net/github/license/jsavage42/hawkufire)](https://github.com/jsavage42/hawkufire/blob/master/LICENSE)
+
 1. [HAWKU v0.2.0](#hawku-v020)
    1. [Install Locally](#install-locally)
       1. [Install Node and NPM](#install-node-and-npm)
