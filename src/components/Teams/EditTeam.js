@@ -39,7 +39,7 @@ class EditTeam extends Component {
     e.preventDefault();
     const tid = `${name}`;
     console.log(state);
-    firebase.competition(tid).set(state);
+    firebase.team(tid).set(state);
 
     this.setState({
       school: "",
