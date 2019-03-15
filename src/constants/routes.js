@@ -20,9 +20,8 @@ export const VIEW_COMPETITOR = "/competitors/:uid";
 // Team
 export const TEAMS = "/team";
 export const ADD_TEAM = "/team/add";
-export const EDIT_TEAM = "/team/edit/:tid";
+export const EDIT_TEAM = "/team/:tid/edit";
 export const VIEW_TEAM = "/team/:tid";
-export const CAPTAIN = "/team/:tid/:uid";
 
 // Competitions
 export const COMPETITIONS = "/competition";
