@@ -39,18 +39,12 @@ class TeamDetails extends Component {
       <main id="team_details">
         {team && (
           <React.Fragment>
-            <h1>{team.name}</h1>
+            <h2>{team.name}</h2>
             <input
               type="button"
               value="Click here to edit the team"
               onClick={this.editTeam}
             />
-            {team.school && (
-              <React.Fragment>
-                <h2>School</h2>
-                <p>{team.school}</p>
-              </React.Fragment>
-            )}
             <h2>Team Captain</h2>
             <p>{team.captain}</p>
             <h2>Team Members</h2>

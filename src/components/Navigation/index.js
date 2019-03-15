@@ -4,6 +4,7 @@ import React from "react";
 import * as ROUTES from "../../constants/routes";
 
 // *** Styles *** //
+import '../../styles/components/Navigation.css';
 
 // *** Third-Party *** //
 import { NavLink as Link } from "react-router-dom";
@@ -28,6 +29,7 @@ const NavigationAuth = ({ authUser }) => (
       <h1>
         HAW<span id="air">KU</span>
       </h1>
+      <SignOutButton />
     </div>
     <nav>
       <ul>
@@ -61,15 +63,19 @@ const NavigationAuth = ({ authUser }) => (
             Reports
           </Link>
         </li>
+        <li>
+          <Link to={ROUTES.DASHBOARD} exact activeClassName="selected">
+            Dashboard
+          </Link>
+        </li>
       </ul>
-      <SignOutButton />
     </nav>
   </header>
 );
 
 const NavigationNonAuth = () => (
   <header>
-    <h1>HAWKU</h1>
+    <h2>HAWKU</h2>
     <nav>
       <ul>
         <li>

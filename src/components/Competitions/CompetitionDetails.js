@@ -33,7 +33,7 @@ class CompetitionDetails extends Component {
     const { competition } = this.state;
     return (
       <main id="competition_details">
-        <h1>Competition Details</h1>
+        <h2>Competition Details</h2>
         <article>
           <input
             type="button"

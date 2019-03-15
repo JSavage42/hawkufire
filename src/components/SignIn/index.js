@@ -16,7 +16,7 @@ import { SignUpLink } from '../SignUp';
 
 const SignInPage = () => (
   <div>
-    <h1>SignIn</h1>
+    <h2>SignIn</h2>
     <SignInForm />
     <SignInGoogle />
     <SignInFacebook />

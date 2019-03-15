@@ -1,4 +1,5 @@
 export const HOME = "/";
+export const DASHBOARD = "/dashboard";
 export const SIGN_UP = "/signup";
 export const SIGN_IN = "/signin";
 export const ACCOUNT = "/account";
@@ -32,10 +33,10 @@ export const VIEW_COMPETITION = "/competition/:semesteryear/:name/";
 // Anomalies
 export const ANOMALIES = "/anomaly";
 export const ADD_ANOMALY = "/anomaly/add";
-export const EDIT_ANOMALY = "/anomaly/edit/:aid";
-export const VIEW_ANOMALY = "/anomaly/:aid";
+export const EDIT_ANOMALY = "/anomaly/:tid/:cid/:aid/edit";
+export const VIEW_ANOMALY = "/anomaly/:tid/:cid/:aid";
 
-// Anomalies
+// Reports
 export const REPORTS = "/report";
 export const ADD_REPORT = "/report/add";
 export const EDIT_REPORT = "/report/edit/:rid";

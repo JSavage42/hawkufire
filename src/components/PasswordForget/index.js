@@ -11,7 +11,7 @@ import { withFirebase } from '../Firebase';
 
 const PasswordForgetPage = () => (
   <div>
-    <h1>PasswordForget</h1>
+    <h2>PasswordForget</h2>
     <PasswordForgetForm />
   </div>
 );

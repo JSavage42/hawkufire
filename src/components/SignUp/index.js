@@ -11,7 +11,7 @@ import { withFirebase } from '../Firebase';
 
 const SignUpPage = () => (
   <div>
-    <h1>SignUp</h1>
+    <h2>SignUp</h2>
     <SignUpForm />
   </div>
 );
@@ -143,24 +143,6 @@ class SignUpFormBase extends Component {
           type="password"
           placeholder="Confirm Password"
         />
-        <label>
-          Request Admin:
-          <input
-            name="requestAdmin"
-            type="checkbox"
-            checked={requestAdmin}
-            onChange={this.onChangeCheckbox}
-          />
-        </label>
-        <label>
-          Request Instructor:
-          <input
-            name="requestInstructor"
-            type="checkbox"
-            checked={requestInstructor}
-            onChange={this.onChangeCheckbox}
-          />
-        </label>
         <button disabled={isInvalid} type="submit">
           Sign Up
         </button>

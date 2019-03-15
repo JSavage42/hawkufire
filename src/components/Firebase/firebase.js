@@ -92,7 +92,7 @@ class Firebase {
 
   // *** Anomaly API *** //
 
-  anomaly = aid => this.db.ref(`anomalies/${aid}`);
+  anomaly = (tid, cid, aid) => this.db.ref(`anomalies/${tid}/${cid}`);
 
   anomalies = () => this.db.ref(`anomalies`);
 

@@ -36,6 +36,7 @@ class TeamList extends Component {
     const { teams, loading } = this.state;
     return (
       <main id="team_list">
+        <h2>Teams</h2>
         <Link to={ROUTES.ADD_TEAM}>Add Team</Link>
         {loading && <div>Loading...</div>}
         {teams && (

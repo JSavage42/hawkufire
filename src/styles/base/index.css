@@ -4,19 +4,55 @@ html {
 }
 
 body {
-  color: #000;
-  background-color: #fff;
+  color: var(--body-font-color);
+  background-color: var(--body-background-color);
   height: 100vh;
-  font-family: Raleway, "Helvetica Neue", sans-serif;
+  font-family: var(--font);
   font-size: 1.6rem;
   letter-spacing: 0.125rem;
 }
 
 a,
 a:visited {
-  color: #000;
+  color: var(--body-a-color);
 }
 
 #root {
   height: 100vh;
+}
+
+main {
+  background: var(--main-background-color);
+  align-items: center;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom: 5px solid black;
+  border-left: 5px solid black;
+  border-right: 2px solid black;
+  height: 100%;
+  margin: 0 1rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+h2 {
+  color: var(--h2-color);
+  font-size: var(--h2-size);
+  text-shadow: var(--h2-text-shadow)
+}
+h3 {
+  color: var(--h3-color);
+  font-size: var(--h3-size);
+}
+h4 {
+  color: var(--h4-color);
+  font-size: var(--h4-size);
+}
+h5 {
+  color: var(--h5-color);
+  font-size: var(--h5-size);
+}
+h6 {
+  color: var(--h6-color);
+  font-size: var(--h6-size);
 }

@@ -27,7 +27,7 @@ class CompetitorsDetails extends Component {
       <main id="competition_details">
         {competitor && (
           <>
-            <h1>{competitor.username}</h1>
+            <h2>{competitor.username}</h2>
             <input
               type="button"
               value="Click here to edit the competitor"
