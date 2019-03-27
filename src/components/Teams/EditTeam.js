@@ -67,8 +67,8 @@ class EditTeam extends Component {
     return (
       <main id="edit_team">
         <h2>Edit Team</h2>
-        <article>
-          <form onSubmit={onSubmit}>
+        <article className="edit">
+          <form onSubmit={onSubmit} className="editForm">
             <input
               type="text"
               onChange={onChange}

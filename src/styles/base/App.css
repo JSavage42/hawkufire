@@ -38,6 +38,23 @@ main article a p:hover {
   font-weight: 700;
 }
 
+article.edit {
+  display: flex;
+}
+
+form.editForm input {
+  display: block;
+  padding: 1rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+form.editForm input[type="submit"],
+form.editForm input[type="reset"] {
+  width: 100%;
+}
+
 a.btn {
   background: var(--list-btn-background);
   border: var(--list-btn-border);
