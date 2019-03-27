@@ -7,7 +7,7 @@ import * as ROUTES from "../../constants/routes";
 import "../../styles/components/Navigation.css";
 
 // *** Third-Party *** //
-import { NavLink as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // *** HOC and Context *** //
 import { AuthUserContext } from "../Session";
@@ -32,39 +32,39 @@ const NavigationAuth = ({ authUser }) => (
     <nav>
       <ul>
         <li>
-          <Link to={ROUTES.HOME} exact activeClassName="selected">
+          <NavLink to={ROUTES.HOME} exact activeClassName="selected">
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={ROUTES.COMPETITIONS} exact activeClassName="selected">
+          <NavLink to={ROUTES.COMPETITIONS} exact activeClassName="selected">
             Competitions
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={ROUTES.TEAMS} exact activeClassName="selected">
+          <NavLink to={ROUTES.TEAMS} exact activeClassName="selected">
             Teams
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={ROUTES.ANOMALIES} exact activeClassName="selected">
+          <NavLink to={ROUTES.ANOMALIES} exact activeClassName="selected">
             Anomalies
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={ROUTES.COMPETITORS} exact activeClassName="selected">
+          <NavLink to={ROUTES.COMPETITORS} exact activeClassName="selected">
             Competitors
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={ROUTES.REPORTS} exact activeClassName="selected">
+          <NavLink to={ROUTES.REPORTS} exact activeClassName="selected">
             Reports
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={ROUTES.DASHBOARD} exact activeClassName="selected">
+          <NavLink to={ROUTES.DASHBOARD} exact activeClassName="selected">
             Dashboard
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
@@ -77,7 +77,7 @@ const NavigationNonAuth = () => (
     <nav>
       <ul>
         <li>
-          <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+          <NavLink to={ROUTES.SIGN_IN}>Sign In</NavLink>
         </li>
       </ul>
     </nav>
