@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
+import { Link } from 'react-router-dom';
 
 class CompetitorsDetails extends Component {
   constructor(props) {
@@ -16,25 +17,18 @@ class CompetitorsDetails extends Component {
     });
   }
 
-  editComp = () => {
-    const { history, match } = this.props;
-    history.push(`${match.url}/edit`);
-  };
-
   render() {
     const { competitor } = this.state;
     return (
       <main id="competition_details">
         {competitor && (
-          <>
+          <article>
             <h2>{competitor.username}</h2>
-            <input
-              type="button"
-              value="Click here to edit the competitor"
-              onClick={this.editComp}
-            />
+            <Link to={`${this.props.match.url}/edit`} className="btn">
+              Edit the Competitor
+            </Link>
             <p>{competitor.email}</p>
-          </>
+          </article>
         )}
       </main>
     );

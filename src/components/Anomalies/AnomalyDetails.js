@@ -1,11 +1,12 @@
-import React, { Component } from "react";
-import { withFirebase } from "../Firebase";
-
+import React, { Component } from 'react';
+import { withFirebase } from '../Firebase';
+import { Link } from 'react-router-dom';
+import '../../styles/components/AnomalyDetails.css';
 class AnomalyDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      anomaly: null
+      anomaly: null,
     };
     this.editAnomaly = this.editAnomaly.bind(this);
   }
@@ -13,11 +14,9 @@ class AnomalyDetails extends Component {
   componentWillMount() {
     const { firebase } = this.props;
     const { tid, cid, aid } = this.props.match.params;
-    firebase
-      .anomaly(tid, cid, aid)
-      .on("value", snapshot => {
-        this.setState({ anomaly: snapshot.val() });
-      });
+    firebase.anomaly(tid, cid, aid).on('value', snapshot => {
+      this.setState({ anomaly: snapshot.val() });
+    });
   }
 
   editAnomaly = () => {
@@ -29,18 +28,17 @@ class AnomalyDetails extends Component {
     const { anomaly } = this.state;
     console.log(this.state);
     return (
-      <main id="competition_details">
+      <main id="anomaly_details">
         <h2>Anomaly Details</h2>
         <article>
-          <input
-            type="button"
-            value="Click here to edit the anomaly"
-            onClick={this.editAnomaly}
-          />
+          <Link to={`${this.props.match.url}/edit`} className="btn">
+            Edit the Anomaly
+          </Link>
           {anomaly &&
             Object.entries(anomaly).map(([key, value]) => (
-              <p key={key}>
-                {key.charAt(0).toUpperCase() + key.substring(1)}: {value}
+              <p key={key} className={key}>
+                <h3>{key.charAt(0).toUpperCase() + key.substring(1)}</h3>
+                <p className={value}>{value}</p>
               </p>
             ))}
         </article>

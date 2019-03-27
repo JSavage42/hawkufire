@@ -31,21 +31,25 @@ class AnomalyList extends Component {
     return (
       <main id="anomaly_list">
         <h2>Anomalies</h2>
-        <Link to={ROUTES.ADD_ANOMALY}>Add an Anomaly</Link>
+        <Link to={ROUTES.ADD_ANOMALY} className="btn">
+          Add an Anomaly
+        </Link>
         {loading && <div>Loading...</div>}
         {
           <article id="anomalies">
             {Object.values(
               anomalies.map(anomalies =>
                 Object.values(anomalies).map(anomaly => (
-                  <React.Fragment key={`${anomaly.title}${anomaly.dueBy}`}>
+                  <Link
+                    to={`/anomaly/${anomaly.team}/${anomaly.competition}/${
+                      anomaly.title
+                    }`}
+                    key={`${anomaly.title}${anomaly.dueBy}`}
+                  >
                     <p>
-                      <Link to={`/anomaly/${anomaly.team}/${anomaly.competition}/${anomaly.title}`}>
-                        {anomaly.title} -- {anomaly.team} -{" "}
-                        {anomaly.assignedTo}
-                      </Link>
+                      {anomaly.title} -- {anomaly.team} - {anomaly.assignedTo}
                     </p>
-                  </React.Fragment>
+                  </Link>
                 ))
               )
             )}

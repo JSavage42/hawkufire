@@ -14,8 +14,11 @@ import { withFirebase } from '../Firebase';
 import { PasswordForgetLink } from '../PasswordForget';
 import { SignUpLink } from '../SignUp';
 
+// *** Styles *** //
+import '../../styles/components/SignIn.css';
+
 const SignInPage = () => (
-  <div>
+  <main id="m-sign-in-main">
     <h2>SignIn</h2>
     <SignInForm />
     <SignInGoogle />
@@ -23,7 +26,7 @@ const SignInPage = () => (
     <SignInTwitter />
     <PasswordForgetLink />
     <SignUpLink />
-  </div>
+  </main>
 );
 
 const INITIAL_STATE = {
@@ -32,8 +35,7 @@ const INITIAL_STATE = {
   error: null,
 };
 
-const ERROR_CODE_ACCOUNT_EXISTS =
-  'auth/account-exists-with-different-credential';
+const ERROR_CODE_ACCOUNT_EXISTS = 'auth/account-exists-with-different-credential';
 
 const ERROR_MSG_ACCOUNT_EXISTS = `
   An account with an E-Mail address to
@@ -77,20 +79,8 @@ class SignInFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="password"
-          value={password}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
+        <input name="email" value={email} onChange={this.onChange} type="text" placeholder="Email Address" />
+        <input name="password" value={password} onChange={this.onChange} type="password" placeholder="Password" />
         <button disabled={isInvalid} type="submit">
           Sign In
         </button>
@@ -244,22 +234,22 @@ class SignInTwitterBase extends Component {
 
 const SignInForm = compose(
   withRouter,
-  withFirebase,
+  withFirebase
 )(SignInFormBase);
 
 const SignInGoogle = compose(
   withRouter,
-  withFirebase,
+  withFirebase
 )(SignInGoogleBase);
 
 const SignInFacebook = compose(
   withRouter,
-  withFirebase,
+  withFirebase
 )(SignInFacebookBase);
 
 const SignInTwitter = compose(
   withRouter,
-  withFirebase,
+  withFirebase
 )(SignInTwitterBase);
 
 export default SignInPage;

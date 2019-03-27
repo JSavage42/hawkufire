@@ -4,7 +4,7 @@ import React from "react";
 import * as ROUTES from "../../constants/routes";
 
 // *** Styles *** //
-import '../../styles/components/Navigation.css';
+import "../../styles/components/Navigation.css";
 
 // *** Third-Party *** //
 import { NavLink as Link } from "react-router-dom";
@@ -26,9 +26,7 @@ const Navigation = () => (
 const NavigationAuth = ({ authUser }) => (
   <header>
     <div id="logo-title">
-      <h1>
-        HAW<span id="air">KU</span>
-      </h1>
+      <h1>HAWKU</h1>
       <SignOutButton />
     </div>
     <nav>

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 // *** Constants *** //
-import * as ROUTES from '../../constants/routes';
+import * as ROUTES from "../../constants/routes";
 
 // *** Third-Party *** //
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter } from "react-router-dom";
 
 // *** HOC and Context *** //
-import { withFirebase } from '../Firebase';
+import { withFirebase } from "../Firebase";
 
 const SignUpPage = () => (
   <div>
@@ -17,16 +17,14 @@ const SignUpPage = () => (
 );
 
 const INITIAL_STATE = {
-  username: '',
-  email: '',
-  passwordOne: '',
-  passwordTwo: '',
-  requestAdmin: false,
-  requestInstructor: false,
-  error: null,
+  username: "",
+  email: "",
+  passwordOne: "",
+  passwordTwo: "",
+  error: null
 };
 
-const ERROR_CODE_ACCOUNT_EXISTS = 'auth/email-already-in-use';
+const ERROR_CODE_ACCOUNT_EXISTS = "auth/email-already-in-use";
 
 const ERROR_MSG_ACCOUNT_EXISTS = `
   An account with this E-Mail address already exists.
@@ -44,30 +42,15 @@ class SignUpFormBase extends Component {
   }
 
   onSubmit = event => {
-    const {
-      username,
-      email,
-      passwordOne,
-      requestAdmin,
-      requestInstructor,
-    } = this.state;
+    const { username, email, passwordOne } = this.state;
     const { firebase, history } = this.props;
-    const requests = [];
-    if (requestAdmin) {
-      requests.push('admin');
-    }
-    if (requestInstructor) {
-      requests.push('instructor');
-    }
-
     firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         // Create a user in your Firebase real time database
         return firebase.competitor(authUser.user.uid).set({
           username,
-          email,
-          requests,
+          email
         });
       })
       .then(() => {
@@ -97,21 +80,13 @@ class SignUpFormBase extends Component {
   };
 
   render() {
-    const {
-      username,
-      email,
-      passwordOne,
-      passwordTwo,
-      error,
-      requestInstructor,
-      requestAdmin,
-    } = this.state;
+    const { username, email, passwordOne, passwordTwo, error } = this.state;
 
     const isInvalid =
       passwordOne !== passwordTwo ||
-      passwordOne === '' ||
-      email === '' ||
-      username === '';
+      passwordOne === "" ||
+      email === "" ||
+      username === "";
 
     return (
       <form onSubmit={this.onSubmit}>

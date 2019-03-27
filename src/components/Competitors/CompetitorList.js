@@ -37,18 +37,17 @@ class CompetitorList extends Component {
       <main id="competitor_list">
         <h2>Competitors</h2>
         {loading && <div>Loading...</div>}
-        {competitors && (
-          <ul>
-            {competitors.map(competitor => (
+        <article>
+          {competitors &&
+            competitors.map(competitor => (
               <Link
                 to={`${ROUTES.COMPETITORS}/${competitor.uid}`}
                 key={competitor.uid}
               >
-                <li>{competitor.username}</li>
+                <p>{competitor.username}</p>
               </Link>
             ))}
-          </ul>
-        )}
+        </article>
       </main>
     );
   }

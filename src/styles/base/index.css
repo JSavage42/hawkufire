@@ -22,6 +22,8 @@ a:visited {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
   background: var(--main-background-color);
   align-items: center;
   border-bottom-right-radius: 15px;
@@ -29,20 +31,20 @@ main {
   border-bottom: 5px solid black;
   border-left: 5px solid black;
   border-right: 2px solid black;
-  height: 100%;
   margin: 0 1rem;
-  margin-bottom: 5rem;
+  min-height: 80%;
   text-align: center;
 }
 
 h2 {
   color: var(--h2-color);
   font-size: var(--h2-size);
-  text-shadow: var(--h2-text-shadow)
+  text-shadow: var(--h2-text-shadow);
 }
 h3 {
   color: var(--h3-color);
   font-size: var(--h3-size);
+  text-shadow: var(--h3-text-shadow);
 }
 h4 {
   color: var(--h4-color);

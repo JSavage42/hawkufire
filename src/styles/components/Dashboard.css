@@ -1,0 +1,14 @@
+main#dashboard {
+  display: flex;
+}
+
+article#dashboard_user-anomalies {
+  background: var(--ku-blue);
+  border: none;
+  border-radius: 20px;
+  border-bottom-left-radius: 0%;
+}
+
+article#dashboard_user-anomalies h3 {
+  margin: 0 5rem;
+}

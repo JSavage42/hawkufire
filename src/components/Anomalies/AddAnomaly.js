@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
-import { describe } from "mocha";
 
 class AddAnomaly extends Component {
   constructor(props) {
@@ -12,7 +11,7 @@ class AddAnomaly extends Component {
       competition: "",
       assignedTo: "",
       description: "",
-      dueBy: "",
+      dueBy: ""
     };
   }
 
@@ -33,9 +32,9 @@ class AddAnomaly extends Component {
       competition: "",
       assignedTo: "",
       description: "",
-      dueBy: "",
+      dueBy: ""
     });
-    this.props.history.push('/anomaly');
+    this.props.history.push("/anomaly");
   };
 
   render() {
@@ -45,7 +44,7 @@ class AddAnomaly extends Component {
       competition,
       assignedTo,
       description,
-      dueBy,
+      dueBy
     } = this.state;
     const { onSubmit, onChange } = this;
     return (
@@ -86,13 +85,8 @@ class AddAnomaly extends Component {
               value={description}
               name="description"
               placeholder="Description"
-            ></textarea>
-            <input
-              type="time"
-              onChange={onChange}
-              value={dueBy}
-              name="dueBy"
             />
+            <input type="time" onChange={onChange} value={dueBy} name="dueBy" />
             <input type="submit" value="Add Anomaly" />
             <input type="reset" value="Reset" />
           </form>

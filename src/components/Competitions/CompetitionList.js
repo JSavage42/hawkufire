@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
 import { withFirebase } from "../Firebase";
-import '../../styles/components/Competitions.css';
+import "../../styles/components/Competitions.css";
 
 class CompetitionList extends Component {
   constructor(props) {
@@ -44,20 +44,17 @@ class CompetitionList extends Component {
             {Object.values(
               competitions.map(competition =>
                 Object.values(competition).map(comp => (
-                  <React.Fragment
-                    key={`${comp.name}${comp.semester}${comp.year}`}
+                  <Link
+                    to={`/competition/${comp.semester}${comp.year}/${
+                      comp.name
+                    }`}
+                    key={`${comp.semester}${comp.year}${comp.name}`}
                   >
-                    <Link
-                      to={`/competition/${comp.semester}${comp.year}/${
-                        comp.name
-                      }`}
-                    >
-                      <p>
-                        {comp.semester}
-                        {comp.year} - {comp.name}
-                      </p>
-                    </Link>
-                  </React.Fragment>
+                    <p>
+                      {comp.semester}
+                      {comp.year} - {comp.name}
+                    </p>
+                  </Link>
                 ))
               )
             )}

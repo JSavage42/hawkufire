@@ -1,5 +1,12 @@
-import React from 'react';
+import React from "react";
+import "../../styles/components/Dashboard.css";
+import UserAnomalies from "./UserAnomalies";
 
-const Dashboard = () => <main><h2>Dashing Board</h2></main>;
+const Dashboard = () => (
+  <main id="dashboard">
+    <h2>Dashing Board</h2>
+    <UserAnomalies />
+  </main>
+);
 
 export default Dashboard;
