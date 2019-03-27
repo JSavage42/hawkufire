@@ -36,12 +36,14 @@ import {
   CompetitorDetails
 } from "../Competitors";
 import { ReportList, AddReport, EditReport, ReportDetails } from "../Reports";
+import Dashboard from "../Dashboard";
 
 const App = () => (
   <React.Fragment>
     <Navigation />
     <Switch>
       <Route exact path={ROUTES.HOME} component={HomePage} />
+      <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
       <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
       <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
       {/* Competitions */}

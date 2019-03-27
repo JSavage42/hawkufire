@@ -1,0 +1,84 @@
+main h2 {
+  justify-self: flex-start;
+}
+
+main article {
+  margin: 1rem;
+  color: white;
+  padding: 2rem;
+}
+
+main article a {
+  font-size: var(--list-a-font-size);
+  color: var(--list-a-color);
+  text-decoration: none;
+}
+
+article p,
+h3 ~ p {
+  color: white;
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+main article a p {
+  background: var(--list-p-background-color);
+  margin: 3rem;
+  padding: 2rem;
+  text-align: center;
+  border: var(--list-p-border);
+  border-radius: var(--list-p-border-radius);
+}
+
+main article a p:hover {
+  cursor: pointer;
+  background: var(--list-p-hover-background-color);
+  color: var(--list-p-hover-font-color);
+  font-weight: 700;
+}
+
+article.edit {
+  display: flex;
+}
+
+form.editForm input {
+  display: block;
+  padding: 1rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+form.editForm input[type="submit"],
+form.editForm input[type="reset"] {
+  width: 100%;
+}
+
+a.btn {
+  background: var(--list-btn-background);
+  border: var(--list-btn-border);
+  border-radius: var(--list-btn-border-radius);
+  color: var(--list-btn-color);
+  padding: 0.75rem;
+  text-decoration: none;
+  display: block;
+  margin: 1rem auto;
+  width: 30rem;
+}
+
+input.btn {
+  background: var(--list-btn-background);
+  border: var(--list-btn-border);
+  color: var(--list-btn-color);
+  padding: 0.75rem;
+  text-decoration: none;
+}
+
+a.btn:hover,
+input.btn:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--list-btn-hover-color);
+  background: var(--list-btn-hover-background);
+}

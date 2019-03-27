@@ -6,7 +6,6 @@ class AddTeam extends Component {
     super(props);
 
     this.state = {
-      school: "",
       name: "",
       captain: "",
       mem1: "",
@@ -36,7 +35,6 @@ class AddTeam extends Component {
     const tid = `${name}`;
     firebase.team(`${tid}`).set(state);
     this.setState({
-      school: "",
       name: "",
       captain: "",
       mem1: "",
@@ -53,7 +51,6 @@ class AddTeam extends Component {
 
   render() {
     const {
-      school,
       name,
       captain,
       mem1,
@@ -71,13 +68,6 @@ class AddTeam extends Component {
         <h2>Add a Team!</h2>
         <article>
           <form onSubmit={onSubmit}>
-            <input
-              type="text"
-              onChange={onChange}
-              value={school}
-              name="school"
-              placeholder="School Name"
-            />
             <input
               type="text"
               onChange={onChange}

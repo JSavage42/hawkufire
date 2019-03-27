@@ -59,8 +59,8 @@ class EditCompetition extends Component {
     const { onSubmit, onChange } = this;
     const { name, city, state, numOfCompetitors, year, semester } = this.state;
     return (
-      <main id="add_competition">
-        <h1>Add Competition</h1>
+      <main id="edit_competition">
+        <h2>Edit Competition</h2>
         <article>
           <form onSubmit={onSubmit}>
             <input

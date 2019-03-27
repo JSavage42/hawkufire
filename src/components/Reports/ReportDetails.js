@@ -1,5 +1,5 @@
 import React from 'react';
 
-const EditCompetition = () => <h1>Edit Competition</h1>;
+const EditReports = () => <h2>Edit Reports</h2>;
 
-export default EditCompetition;
+export default EditReports;

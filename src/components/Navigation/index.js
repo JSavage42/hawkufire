@@ -4,9 +4,10 @@ import React from "react";
 import * as ROUTES from "../../constants/routes";
 
 // *** Styles *** //
+import "../../styles/components/Navigation.css";
 
 // *** Third-Party *** //
-import { NavLink as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // *** HOC and Context *** //
 import { AuthUserContext } from "../Session";
@@ -25,55 +26,58 @@ const Navigation = () => (
 const NavigationAuth = ({ authUser }) => (
   <header>
     <div id="logo-title">
-      <h1>
-        HAW<span id="air">KU</span>
-      </h1>
+      <h1>HAWKU</h1>
+      <SignOutButton />
     </div>
     <nav>
       <ul>
         <li>
-          <Link to={ROUTES.HOME} exact activeClassName="selected">
+          <NavLink to={ROUTES.HOME} exact activeClassName="selected">
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={ROUTES.COMPETITIONS} exact activeClassName="selected">
+          <NavLink to={ROUTES.COMPETITIONS} exact activeClassName="selected">
             Competitions
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={ROUTES.TEAMS} exact activeClassName="selected">
+          <NavLink to={ROUTES.TEAMS} exact activeClassName="selected">
             Teams
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={ROUTES.ANOMALIES} exact activeClassName="selected">
+          <NavLink to={ROUTES.ANOMALIES} exact activeClassName="selected">
             Anomalies
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={ROUTES.COMPETITORS} exact activeClassName="selected">
+          <NavLink to={ROUTES.COMPETITORS} exact activeClassName="selected">
             Competitors
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to={ROUTES.REPORTS} exact activeClassName="selected">
+          <NavLink to={ROUTES.REPORTS} exact activeClassName="selected">
             Reports
-          </Link>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to={ROUTES.DASHBOARD} exact activeClassName="selected">
+            Dashboard
+          </NavLink>
         </li>
       </ul>
-      <SignOutButton />
     </nav>
   </header>
 );
 
 const NavigationNonAuth = () => (
   <header>
-    <h1>HAWKU</h1>
+    <h2>HAWKU</h2>
     <nav>
       <ul>
         <li>
-          <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+          <NavLink to={ROUTES.SIGN_IN}>Sign In</NavLink>
         </li>
       </ul>
     </nav>

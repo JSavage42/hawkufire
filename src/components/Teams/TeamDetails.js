@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
+import { Link } from 'react-router-dom';
 
 class TeamDetails extends Component {
   constructor(props) {
@@ -39,24 +40,16 @@ class TeamDetails extends Component {
       <main id="team_details">
         {team && (
           <React.Fragment>
-            <h1>{team.name}</h1>
-            <input
-              type="button"
-              value="Click here to edit the team"
-              onClick={this.editTeam}
-            />
-            {team.school && (
-              <React.Fragment>
-                <h2>School</h2>
-                <p>{team.school}</p>
-              </React.Fragment>
-            )}
-            <h2>Team Captain</h2>
-            <p>{team.captain}</p>
-            <h2>Team Members</h2>
+            <h2>{team.name}</h2>
+            <Link to={`${this.props.match.url}/edit`} className="btn">
+              Edit the Team
+            </Link>
+            <h3>Team Captain</h3>
+              <p>{team.captain}</p>
+            <h3>Team Members</h3>
             {this.state.members.length > 0 &&
               this.state.members.map(member => (
-                <p key={member}>{member}</p>
+                <p className={member} key={member}>{member}</p>
               ))}
           </React.Fragment>
         )}

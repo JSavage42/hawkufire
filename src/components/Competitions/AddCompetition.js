@@ -44,7 +44,7 @@ class AddCompetition extends Component {
     const { name, city, state, numOfCompetitors, year, semester } = this.state;
     return (
       <main id="add_competition">
-        <h1>Add Competition</h1>
+        <h2>Add Competition</h2>
         <article>
           <form onSubmit={onSubmit}>
             <input

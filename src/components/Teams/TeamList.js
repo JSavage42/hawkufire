@@ -36,17 +36,19 @@ class TeamList extends Component {
     const { teams, loading } = this.state;
     return (
       <main id="team_list">
-        <Link to={ROUTES.ADD_TEAM}>Add Team</Link>
+        <h2>Teams</h2>
+        <Link to={ROUTES.ADD_TEAM} className="btn">
+          Add Team
+        </Link>
         {loading && <div>Loading...</div>}
-        {teams && (
-          <ul>
-            {teams.map(team => (
+        <article>
+          {teams &&
+            teams.map(team => (
               <Link to={`${ROUTES.TEAMS}/${team.name}`} key={team.name}>
-                <li>{team.name}</li>
+                <p>{team.name}</p>
               </Link>
             ))}
-          </ul>
-        )}
+        </article>
       </main>
     );
   }

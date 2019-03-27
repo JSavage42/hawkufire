@@ -45,7 +45,7 @@ class EditCompetitor extends Component {
     const { username, email } = this.state;
     return (
       <main id="edit_competitor">
-        <h1>Edit Competitor</h1>
+        <h2>Edit Competitor</h2>
         <article>
           <form onSubmit={onSubmit}>
             <input

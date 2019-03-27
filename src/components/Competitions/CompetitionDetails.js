@@ -1,27 +1,23 @@
-import React, { Component } from "react";
-import { withFirebase } from "../Firebase";
+import React, { Component } from 'react';
+import { withFirebase } from '../Firebase';
+import { Link } from 'react-router-dom';
 
 class CompetitionDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      competition: null
+      competition: null,
     };
     this.editComp = this.editComp.bind(this);
   }
 
   componentWillMount() {
     const { firebase } = this.props;
-    firebase
-      .competition(
-        this.props.match.params.semesteryear,
-        this.props.match.params.name
-      )
-      .on("value", snapshot => {
-        this.setState({
-          competition: snapshot.val()
-        });
+    firebase.competition(this.props.match.params.semesteryear, this.props.match.params.name).on('value', snapshot => {
+      this.setState({
+        competition: snapshot.val(),
       });
+    });
   }
 
   editComp = () => {
@@ -33,17 +29,16 @@ class CompetitionDetails extends Component {
     const { competition } = this.state;
     return (
       <main id="competition_details">
-        <h1>Competition Details</h1>
+        <h2>Competition Details</h2>
         <article>
-          <input
-            type="button"
-            value="Click here to edit the competition"
-            onClick={this.editComp}
-          />
+          <Link to={`${this.props.match.url}/edit`} className="btn">
+            Edit the Competition
+          </Link>
           {competition &&
             Object.entries(competition).map(([key, value]) => (
-              <p key={key}>
-                {key.charAt(0).toUpperCase() + key.substring(1)}: {value}
+              <p key={key} className={key}>
+                <h3>{key.charAt(0).toUpperCase() + key.substring(1)}</h3>
+                <p className={value}>{value}</p>
               </p>
             ))}
         </article>

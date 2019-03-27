@@ -1,8 +1,7 @@
 #home {
-  align-items: center;
-  height: 100%;
   display: flex;
   justify-content: center;
+  background: #000;
 }
 
 #home p {
@@ -10,14 +9,14 @@
 }
 
 #home #title {
-  color: #ddd;
+  color: var(--ku-blue);
   font-family: Georgia, "Times New Roman", Times, serif;
-  text-shadow: 5px 2px 5px #770000;
+  text-shadow: 5px 2px 5px var(--crimson);
 }
 
 #home #title #ku {
-  color: #770000;
-  text-shadow: 5px 2px 5px #ddd;
+  color: var(--crimson);
+  text-shadow: 5px 2px 5px var(--ku-blue);
 }
 
 @media (min-width: 650px) {

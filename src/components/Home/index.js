@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { compose } from "recompose";
 
 // *** Styles *** //
-import "../../styles/components/Home/Home.css";
+import "../../styles/components/Home.css";
 
 // *** HOC and Context *** //
 import { withAuthorization } from "../Session";
