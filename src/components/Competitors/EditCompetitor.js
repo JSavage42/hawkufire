@@ -46,8 +46,8 @@ class EditCompetitor extends Component {
     return (
       <main id="edit_competitor">
         <h2>Edit Competitor</h2>
-        <article>
-          <form onSubmit={onSubmit}>
+        <article className="edit">
+          <form onSubmit={onSubmit} className="editForm">
             <input
               type="text"
               onChange={onChange}

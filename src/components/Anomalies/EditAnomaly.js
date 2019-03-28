@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import { withFirebase } from "../Firebase";
+import React, { Component } from 'react';
+import { withFirebase } from '../Firebase';
+import '../../styles/components/EditAnomaly.css';
 
 class EditAnomaly extends Component {
   constructor(props) {
@@ -7,24 +8,24 @@ class EditAnomaly extends Component {
 
     this.state = {
       anomaly: null,
-      title: "",
-      team: "",
-      competition: "",
-      assignedTo: "",
-      description: "",
-      dueBy: ""
+      title: '',
+      team: '',
+      competition: '',
+      assignedTo: '',
+      description: '',
+      dueBy: '',
     };
   }
 
   componentDidMount() {
     const { firebase } = this.props;
     const { tid, cid, aid } = this.props.match.params;
-    firebase.anomaly(tid,cid,aid).on("value", async snapshot => {
-        /* eslint-disable array-callback-return */
-        await Object.entries(snapshot.val()).map(([key, value]) => {
-          this.setState({ [key]: value });
-        });
+    firebase.anomaly(tid, cid, aid).on('value', async snapshot => {
+      /* eslint-disable array-callback-return */
+      await Object.entries(snapshot.val()).map(([key, value]) => {
+        this.setState({ [key]: value });
       });
+    });
   }
 
   onSubmit = e => {
@@ -36,15 +37,15 @@ class EditAnomaly extends Component {
 
     this.setState({
       anomaly: null,
-      title: "",
-      team: "",
-      competition: "",
-      assignedTo: "",
-      description: "",
-      dueBy: ""
+      title: '',
+      team: '',
+      competition: '',
+      assignedTo: '',
+      description: '',
+      dueBy: '',
     });
 
-    this.props.history.push("/anomaly");
+    this.props.history.push('/anomaly');
   };
 
   onChange = e => {
@@ -57,22 +58,10 @@ class EditAnomaly extends Component {
     return (
       <main id="edit_anomaly">
         <h2>Edit Anomaly</h2>
-        <article>
-          <form onSubmit={onSubmit}>
-            <input
-              type="text"
-              onChange={onChange}
-              value={title}
-              name="title"
-              placeholder="Give the Anomaly A Title"
-            />
-            <input
-              type="text"
-              onChange={onChange}
-              value={team}
-              name="team"
-              placeholder="Team Name"
-            />
+        <article className="edit">
+          <form onSubmit={onSubmit} className="editForm">
+            <input type="text" onChange={onChange} value={title} name="title" placeholder="Give the Anomaly A Title" />
+            <input type="text" onChange={onChange} value={team} name="team" placeholder="Team Name" />
             <input
               type="text"
               onChange={onChange}
@@ -87,18 +76,8 @@ class EditAnomaly extends Component {
               name="assignedTo"
               placeholder="Member Assigned To"
             />
-            <textarea
-              onChange={onChange}
-              value={description}
-              name="description"
-              placeholder="Description"
-            ></textarea>
-            <input
-              type="time"
-              onChange={onChange}
-              value={dueBy}
-              name="dueBy"
-            />
+            <textarea onChange={onChange} value={description} name="description" placeholder="Description" />
+            <input type="time" onChange={onChange} value={dueBy} name="dueBy" />
             <input type="submit" value="Save Anomaly" />
             <input type="reset" value="Reset" />
           </form>

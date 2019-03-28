@@ -63,7 +63,18 @@ class EditTeam extends Component {
 
   render() {
     const { onSubmit, onChange } = this;
-    const { name, captain, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8 } = this.state;
+    const {
+      name,
+      captain,
+      mem1,
+      mem2,
+      mem3,
+      mem4,
+      mem5,
+      mem6,
+      mem7,
+      mem8,
+    } = this.state;
     return (
       <main id="edit_team">
         <h2>Edit Team</h2>
