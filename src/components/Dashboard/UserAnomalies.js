@@ -24,14 +24,14 @@ class UserAnomalies extends React.Component {
     const { userInfo } = this.state;
     console.log(userInfo);
     return (
-      <article id="dashboard_user-anomalies">
+      <section id="dashboard_user-anomalies">
         <h3>Anomalies</h3>
         {userInfo && (
           <React.Fragment>
             <p>{userInfo.email}</p> <p>{userInfo.username}</p>
           </React.Fragment>
         )}
-      </article>
+      </section>
     );
   }
 }

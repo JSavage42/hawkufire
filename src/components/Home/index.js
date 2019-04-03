@@ -10,6 +10,8 @@ import "../../styles/components/Home.css";
 import { withAuthorization } from "../Session";
 import { withFirebase } from "../Firebase";
 
+import dunDun from '../../audio/dundun.mp3';
+
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +19,8 @@ class HomePage extends Component {
     this.state = {
       users: null
     };
+
+    this.dunDun = this.dunDun.bind(this);
   }
 
   componentDidMount() {
@@ -32,11 +36,17 @@ class HomePage extends Component {
     this.props.firebase.competitors().off();
   }
 
+  dunDun = () => {
+    console.log('DUN DUN')
+    const audio = new Audio(dunDun);
+    audio.play();
+  };
+
   render() {
     return (
       <main id="home">
         <p>
-          <span id="title">
+          <span id="title" onClick={this.dunDun}>
             HAW<span id="ku">KU</span>
           </span>
         </p>
