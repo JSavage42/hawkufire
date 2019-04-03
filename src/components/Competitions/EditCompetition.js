@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { withFirebase } from "../Firebase";
+import React, { Component } from 'react';
+import { withFirebase } from '../Firebase';
 
 class EditCompetition extends Component {
   constructor(props) {
@@ -7,28 +7,23 @@ class EditCompetition extends Component {
 
     this.state = {
       competition: null,
-      name: "",
-      city: "",
-      state: "",
+      name: '',
+      city: '',
+      state: '',
       numOfCompetitors: 0,
       year: 2019,
-      semester: "Spring"
+      semester: 'Spring',
     };
   }
 
   componentDidMount() {
     const { firebase } = this.props;
-    firebase
-      .competition(
-        this.props.match.params.semesteryear,
-        this.props.match.params.name
-      )
-      .on("value", snapshot => {
-        /* eslint-disable array-callback-return */
-        Object.entries(snapshot.val()).map(([key, value]) => {
-          this.setState({ [key]: value });
-        });
+    firebase.competition(this.props.match.params.semesteryear, this.props.match.params.name).on('value', snapshot => {
+      /* eslint-disable array-callback-return */
+      Object.entries(snapshot.val()).map(([key, value]) => {
+        this.setState({ [key]: value });
       });
+    });
   }
 
   onSubmit = e => {
@@ -40,15 +35,15 @@ class EditCompetition extends Component {
     firebase.competition(semesteryear, name).set(state);
 
     this.setState({
-      name: "",
-      city: "",
-      state: "",
+      name: '',
+      city: '',
+      state: '',
       numOfCompetitors: 0,
       year: 0,
-      semester: "Spring"
+      semester: 'Spring',
     });
 
-    this.props.history.push("/competition");
+    this.props.history.push('/competition');
   };
 
   onChange = e => {
@@ -61,32 +56,11 @@ class EditCompetition extends Component {
     return (
       <main id="edit_competition">
         <h2>Edit Competition</h2>
-        <article>
-          <form onSubmit={onSubmit}>
-            <input
-              type="text"
-              onChange={onChange}
-              value={name}
-              name="name"
-              placeholder="Competition Name"
-              required
-            />
-            <input
-              type="text"
-              onChange={onChange}
-              value={city}
-              name="city"
-              placeholder="City"
-              required
-            />
-            <input
-              type="text"
-              onChange={onChange}
-              value={state}
-              name="state"
-              placeholder="State"
-              required
-            />
+        <article className="edit">
+          <form onSubmit={onSubmit} className="editForm">
+            <input type="text" onChange={onChange} value={name} name="name" placeholder="Competition Name" required />
+            <input type="text" onChange={onChange} value={city} name="city" placeholder="City" required />
+            <input type="text" onChange={onChange} value={state} name="state" placeholder="State" required />
             <input
               type="number"
               onChange={onChange}
@@ -95,23 +69,11 @@ class EditCompetition extends Component {
               placeholder="Number of Competitors"
               required
             />
-            <select
-              name="semester"
-              onChange={onChange}
-              required
-              value={semester}
-            >
+            <select name="semester" onChange={onChange} required value={semester}>
               <option value="Spring">Spring</option>
               <option value="Fall">Fall</option>
             </select>
-            <input
-              type="number"
-              onChange={onChange}
-              value={year}
-              name="year"
-              placeholder="Year"
-              required
-            />
+            <input type="number" onChange={onChange} value={year} name="year" placeholder="Year" required />
             <input type="submit" value="Add Competition" />
             <input type="reset" value="Reset" />
           </form>

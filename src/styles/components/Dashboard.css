@@ -1,14 +1,51 @@
 main#dashboard {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 5rem repeat(5, 1fr);
+  width: 100%;
+  height: 100%;
 }
 
-article#dashboard_user-anomalies {
+#dashboard h2 {
+  grid-column: 3/4;
+  align-self: flex-start;
+  justify-self: center;
+}
+
+#dashboard section {
   background: var(--ku-blue);
   border: none;
-  border-radius: 20px;
-  border-bottom-left-radius: 0%;
+  border-radius: 5rem;
+  margin: 0 4rem 1rem 4rem;
+  align-self: flex-start;
 }
 
-article#dashboard_user-anomalies h3 {
+section#dashboard_user-anomalies {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+
+section#dashboard_user-anomalies h3 {
   margin: 0 5rem;
+}
+
+section#captains-chair {
+  grid-row: 2/4;
+  grid-column: 4/6;
+}
+
+
+section#captains-chair h3 {
+  margin: 0 5rem;
+}
+
+section#captains-chair h4,
+section#captains-chair h5 {
+  color: #fff;
+}
+
+section#internal-comms {
+  grid-column: 2/4;
+  grid-row: 2/3;
 }
