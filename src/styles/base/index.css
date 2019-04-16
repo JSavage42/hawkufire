@@ -5,7 +5,7 @@ html {
 
 body {
   color: var(--body-font-color);
-  background-color: var(--main-background-color);
+  background-color: var(--body-background-color);
   height: 100vh;
   font-family: var(--font);
   font-size: 1.6rem;
@@ -19,7 +19,7 @@ a:visited {
 
 #root {
   display: grid;
-  grid-template-rows: 10rem 1fr;
+  grid-template-rows: 11.125rem 1fr;
   height: 100%;
 }
 

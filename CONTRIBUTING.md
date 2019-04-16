@@ -30,7 +30,7 @@ If appropriate, include the MIT license summary at the top of each file along wi
 
 You can copy and paste the CSS-Tricks license summary from below.
 
-```
+```plain
 
 SUPER IMPORTANT LEGAL DOCUMENT
 ------------------------------

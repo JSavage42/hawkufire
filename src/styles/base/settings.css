@@ -37,9 +37,9 @@
   --header-button-hover-background-color: var(--crimson);
 
   /* *** Main *** */
-  --main-background-color: #000021;
-  --main-font-color: white;
-  --main-a-color: white;
+  --main-background-color: #fff;
+  --main-font-color: #000;
+  --main-a-color: #000;
   --main-a-hover-color: var(--jayhawk-yellow);
 
   /* *** Headings *** */
@@ -60,7 +60,7 @@
   --list-a-color: white;
   --list-a-size: 1.8rem;
   --list-a-font-size: 2rem;
-  --list-a-color: white;
+  --list-a-color: #fff;
   --list-p-border: 1px solid black;
   --list-p-border-radius: 10px;
   --list-p-background-color: var(--crimson);

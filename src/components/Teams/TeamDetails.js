@@ -35,7 +35,6 @@ class TeamDetails extends Component {
 
   render() {
     const { team } = this.state;
-    console.log(this.state);
     return (
       <main id="team_details">
         {team && (

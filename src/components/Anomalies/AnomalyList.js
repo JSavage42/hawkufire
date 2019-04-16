@@ -12,14 +12,13 @@ class AnomalyList extends Component {
   componentWillMount() {
     const { firebase } = this.props;
     this.setState({ loading: true });
-    firebase.anomalies().on("value", snapshot => {
+    firebase.anomalies().child('Team Awesome').child('ARGONNEFall2018').on("value", snapshot => {
       const anomaliesObject = snapshot.val();
+      console.log(anomaliesObject)
       if (anomaliesObject !== null) {
-        Object.values(anomaliesObject).forEach(value => {
-          Object.entries(value).forEach(([key, value]) =>
+          Object.entries(anomaliesObject).forEach(([key, value]) =>
             this.state.anomalies.push({ [key]: value })
           );
-        });
         this.setState({ loading: false });
       }
     });

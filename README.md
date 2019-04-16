@@ -1,7 +1,10 @@
 # HAWKU v0.42.0
 
-[![License](https://badgen.net/badge/license/CSS-Tricks/green)](https://github.com/jsavage42/hawkufire/blob/master/LICENSE)
-[![Twitter](https://badgen.net/twitter/follow/dadsavage42)](https://twitter.com/dadsavage42)
+[![License](https://badgen.net/badge/license/MIT)](https://github.com/jsavage42/hawkufire/blob/master/LICENSE)
+[![Open Issues](https://badgen.net/badge/github/open-issues/micromatch/micromatch?icon=github)](https://github.com/JSavage42/hawkufire/issues)
+[![Closed Issues](https://badgen.net/badge/github/closed-issues/micromatch/micromatch?icon=github)](https://github.com/JSavage42/hawkufire/issues)
+[![Twitter](https://badgen.net/twitter/follow/dadsavage42/:blue?icon=twitter)](https://twitter.com/dadsavage42)
+[![Platform](https://badgen.net/badge/platform/web?list=1)]()
 
 1. [HAWKU v0.42.0](#hawku-v0420)
    1. [Install Locally](#install-locally)

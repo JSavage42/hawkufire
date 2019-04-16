@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withFirebase } from '../Firebase';
-import '../../styles/components/EditAnomaly.css';
 
 class EditAnomaly extends Component {
   constructor(props) {

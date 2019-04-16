@@ -6,16 +6,17 @@
   "private": false,
   "license": "CSS-TRICKS",
   "dependencies": {
-    "firebase": "^5.7.0",
-    "firebase-admin": "^6.4.0",
-    "firebase-functions": "^2.1.0",
-    "firebase-tools": "^6.4.0",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-router-dom": "^4.3.1",
+    "@firebase/app-types": "^0.3.7",
+    "@firebase/util": "^0.2.11",
+    "firebase": "^5.9.2",
+    "firebase-admin": "^7.2.0",
+    "firebase-functions": "^2.2.1",
+    "firebase-tools": "^6.5.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "^2.1.8",
-    "recompose": "^0.30.0",
-    "webdriverio": "^5.7.1"
+    "recompose": "^0.30.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,12 +36,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "heroku-run-build-script": true,
-  "devDependencies": {
-    "@wdio/cli": "^5.7.1",
-    "@wdio/dot-reporter": "^5.7.0",
-    "@wdio/local-runner": "^5.7.1",
-    "@wdio/mocha-framework": "^5.7.0",
-    "@wdio/sync": "^5.7.1"
-  }
+  "heroku-run-build-script": true
 }

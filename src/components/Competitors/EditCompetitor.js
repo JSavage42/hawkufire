@@ -6,9 +6,11 @@ class EditCompetitor extends Component {
     super(props);
 
     this.state = {
+      uid: null,
       competitor: null,
       username: "",
-      email: ""
+      email: "",
+      roles: {}
     };
   }
 
@@ -17,22 +19,37 @@ class EditCompetitor extends Component {
     firebase.competitor(match.params.uid).on("value", snapshot => {
       /* eslint-disable array-callback-return */
       Object.entries(snapshot.val()).map(([key, value]) => {
-        this.setState({ [key]: value });
+        if (key === "roles") {
+          Object.values([value]).forEach(value => {
+            Object.entries(value).map(([key, value]) => {
+              this.setState({ [key]: value });
+            });
+          });
+        }
+        this.setState({
+          [key]: value,
+          uid: match.params.uid
+        });
       });
     });
+  }
+
+  componentWillUnmount() {
+    const { match, firebase } = this.props;
+    firebase.competitor(match.params.id).off();
   }
 
   onSubmit = e => {
     const { state, props } = this;
     const { firebase } = this.props;
-    const { username, email } = state;
+    const { username, email, roles, uid } = state;
     e.preventDefault();
-    const uid = `${props.match.params.uid}`;
     firebase.competitor(uid).update({
       username,
-      email
+      email,
+      roles
     });
-    this.props.history.push("/competitors");
+    props.history.push("/competitors");
   };
 
   onChange = e => {
@@ -40,7 +57,6 @@ class EditCompetitor extends Component {
   };
 
   render() {
-    console.log(this.state);
     const { onSubmit, onChange } = this;
     const { username, email } = this.state;
     return (

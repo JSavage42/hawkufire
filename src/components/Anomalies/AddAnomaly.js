@@ -9,7 +9,7 @@ class AddAnomaly extends Component {
       title: "",
       team: "",
       competition: "",
-      assignedTo: "",
+      assignedTo: 'No One',
       description: "",
       dueBy: ""
     };
@@ -23,7 +23,6 @@ class AddAnomaly extends Component {
     const { state, props } = this;
     const { firebase } = props;
     const { title, team, competition } = state;
-    this.setState({ aid: `${title}${team}${competition}` });
     e.preventDefault();
     firebase.anomaly(team, competition, title).set(state);
     this.setState({

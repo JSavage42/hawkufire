@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
 import { withFirebase } from "../Firebase";
-import "../../styles/components/Competitions.css";
 
 class CompetitionList extends Component {
   constructor(props) {

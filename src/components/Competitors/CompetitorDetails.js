@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class CompetitorsDetails extends Component {
   constructor(props) {
@@ -27,7 +27,16 @@ class CompetitorsDetails extends Component {
             <Link to={`${this.props.match.url}/edit`} className="btn">
               Edit the Competitor
             </Link>
-            <p>{competitor.email}</p>
+            <h3>Email</h3>
+            <p>
+              <a href={`mailto:${competitor.email}`}>{competitor.email}</a>
+            </p>
+            <aside>
+              <h3>Roles</h3>
+              {Object.entries(competitor.roles).map(([key, value]) =>
+                value === true ? <p key={key}>{key}</p> : null
+              )}
+            </aside>
           </article>
         )}
       </main>
