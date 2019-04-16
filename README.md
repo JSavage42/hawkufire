@@ -1,8 +1,8 @@
 # HAWKU v0.42.0
 
 [![License](https://badgen.net/badge/license/MIT)](https://github.com/jsavage42/hawkufire/blob/master/LICENSE)
-[![Open Issues](https://badgen.net/badge/github/open-issues/micromatch/micromatch?icon=github)](https://github.com/JSavage42/hawkufire/issues)
-[![Closed Issues](https://badgen.net/badge/github/closed-issues/micromatch/micromatch?icon=github)](https://github.com/JSavage42/hawkufire/issues)
+[![Open Issues](https://badgen.net/github/open-issues/micromatch/micromatch?icon=github)](https://github.com/JSavage42/hawkufire/issues)
+[![Closed Issues](https://badgen.net/github/closed-issues/micromatch/micromatch?icon=github)](https://github.com/JSavage42/hawkufire/issues)
 [![Twitter](https://badgen.net/twitter/follow/dadsavage42/:blue?icon=twitter)](https://twitter.com/dadsavage42)
 [![Platform](https://badgen.net/badge/platform/web?list=1)]()
 
