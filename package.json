@@ -4,7 +4,7 @@
   "versionCodeName": "Phoenix",
   "homepage": "https://jsavage42.github.io/hawkufire",
   "private": false,
-  "license": "CSS-TRICKS",
+  "license": "MIT",
   "dependencies": {
     "@firebase/app-types": "^0.3.7",
     "@firebase/util": "^0.2.11",
