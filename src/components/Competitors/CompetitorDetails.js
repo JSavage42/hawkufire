@@ -33,9 +33,10 @@ class CompetitorsDetails extends Component {
             </p>
             <aside>
               <h3>Roles</h3>
-              {Object.entries(competitor.roles).map(([key, value]) =>
-                value === true ? <p key={key}>{key}</p> : null
-              )}
+              {competitor.roles &&
+                Object.entries(competitor.roles).map(([key, value]) =>
+                  value === true ? <p key={key}>{key}</p> : null
+                )}
             </aside>
           </article>
         )}

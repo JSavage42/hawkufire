@@ -1,41 +1,44 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 // *** Constants *** //
-import * as ROUTES from '../../constants/routes';
+import * as ROUTES from "../../constants/routes";
 
 // *** Third-Party *** //
-import { withRouter } from 'react-router-dom';
-import { compose } from 'recompose';
+import { withRouter } from "react-router-dom";
+import { compose } from "recompose";
 
 // *** HOC and Context *** //
-import { withFirebase } from '../Firebase';
+import { withFirebase } from "../Firebase";
 
 // *** Components *** //
-import { PasswordForgetLink } from '../PasswordForget';
-import { SignUpLink } from '../SignUp';
+import { PasswordForgetLink } from "../PasswordForget";
+import { SignUpLink } from "../SignUp";
 
 // *** Styles *** //
-import '../../styles/components/SignIn.css';
+import "../../styles/components/SignIn.css";
 
 const SignInPage = () => (
   <main id="m-sign-in-main">
-    <h2>SignIn</h2>
-    <SignInForm />
-    <SignInGoogle />
-    <SignInFacebook />
-    <SignInTwitter />
-    <PasswordForgetLink />
-    <SignUpLink />
+    <article>
+      <h2>SignIn</h2>
+      <SignInForm />
+      <SignInGoogle />
+      <SignInFacebook />
+      <SignInTwitter />
+      <PasswordForgetLink />
+      <SignUpLink />
+    </article>
   </main>
 );
 
 const INITIAL_STATE = {
-  email: '',
-  password: '',
-  error: null,
+  email: "",
+  password: "",
+  error: null
 };
 
-const ERROR_CODE_ACCOUNT_EXISTS = 'auth/account-exists-with-different-credential';
+const ERROR_CODE_ACCOUNT_EXISTS =
+  "auth/account-exists-with-different-credential";
 
 const ERROR_MSG_ACCOUNT_EXISTS = `
   An account with an E-Mail address to
@@ -75,12 +78,24 @@ class SignInFormBase extends Component {
   render() {
     const { email, password, error } = this.state;
 
-    const isInvalid = password === '' || email === '';
+    const isInvalid = password === "" || email === "";
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input name="email" value={email} onChange={this.onChange} type="text" placeholder="Email Address" />
-        <input name="password" value={password} onChange={this.onChange} type="password" placeholder="Password" />
+        <input
+          name="email"
+          value={email}
+          onChange={this.onChange}
+          type="text"
+          placeholder="Email Address"
+        />
+        <input
+          name="password"
+          value={password}
+          onChange={this.onChange}
+          type="password"
+          placeholder="Password"
+        />
         <button disabled={isInvalid} type="submit">
           Sign In
         </button>
@@ -107,7 +122,7 @@ class SignInGoogleBase extends Component {
         return firebase.user(socialAuthUser.user.uid).set({
           username: socialAuthUser.user.displayName,
           email: socialAuthUser.user.email,
-          roles: [],
+          roles: []
         });
       })
       .then(() => {
@@ -154,7 +169,7 @@ class SignInFacebookBase extends Component {
         return firebase.competitor(socialAuthUser.competitor.uid).set({
           username: socialAuthUser.additionalUserInfo.profile.name,
           email: socialAuthUser.additionalUserInfo.profile.email,
-          roles: [],
+          roles: []
         });
       })
       .then(() => {
@@ -201,7 +216,7 @@ class SignInTwitterBase extends Component {
         return firebase.competitor(socialAuthUser.competitor.uid).set({
           username: socialAuthUser.additionalUserInfo.profile.name,
           email: socialAuthUser.additionalUserInfo.profile.email,
-          roles: [],
+          roles: []
         });
       })
       .then(() => {

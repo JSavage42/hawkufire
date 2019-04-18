@@ -1,6 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
@@ -15,6 +18,10 @@ body {
 a,
 a:visited {
   color: var(--body-a-color);
+}
+
+a[href^="mailto"] {
+  color: var(--mailto-a-color);
 }
 
 #root {

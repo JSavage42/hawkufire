@@ -21,6 +21,7 @@
   --font: Raleway, "Helvetica Neue", sans-serif;
   --body-background-color: var(--signature-grey);
   --body-font-color: #000;
+  --mailto-a-color: #000;
 
   /* *** Header *** */
   --header-background-color: #fff;
@@ -57,21 +58,19 @@
   --h6-size: 2rem;
 
   /* *** Lists *** */
-  --list-a-color: white;
+  --list-a-color: #fff;
   --list-a-size: 1.8rem;
   --list-a-font-size: 2rem;
   --list-a-color: #fff;
-  --list-p-border: 1px solid black;
-  --list-p-border-radius: 10px;
+  --list-p-border: 2px solid black;
   --list-p-background-color: var(--crimson);
   --list-p-hover-background-color: var(--signature-grey);
   --list-p-hover-font-color: var(--jayhawk-yellow);
 
   /* *** Btn *** */
   --list-btn-background: var(--crimson);
-  --list-btn-border: 2px solid white;
-  --list-btn-border-radius: 10px;
-  --list-btn-color: white;
+  --list-btn-border: 2px solid black;
+  --list-btn-color: #fff;
   --list-btn-hover-color: var(--jayhawk-yellow);
   --list-btn-hover-background: var(--ku-blue);
 }

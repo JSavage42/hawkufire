@@ -37,32 +37,32 @@ const NavigationAuth = ({ authUser }) => (
           </NavLink>
         </li>
         <li>
-          <NavLink to={ROUTES.COMPETITIONS} exact activeClassName="selected">
+          <NavLink to={ROUTES.COMPETITIONS} activeClassName="selected">
             Competitions
           </NavLink>
         </li>
         <li>
-          <NavLink to={ROUTES.TEAMS} exact activeClassName="selected">
+          <NavLink to={ROUTES.TEAMS} activeClassName="selected">
             Teams
           </NavLink>
         </li>
         <li>
-          <NavLink to={ROUTES.ANOMALIES} exact activeClassName="selected">
+          <NavLink to={ROUTES.ANOMALIES} activeClassName="selected">
             Anomalies
           </NavLink>
         </li>
         <li>
-          <NavLink to={ROUTES.COMPETITORS} exact activeClassName="selected">
+          <NavLink to={ROUTES.COMPETITORS} activeClassName="selected">
             Competitors
           </NavLink>
         </li>
         <li>
-          <NavLink to={ROUTES.REPORTS} exact activeClassName="selected">
+          <NavLink to={ROUTES.REPORTS} activeClassName="selected">
             Reports
           </NavLink>
         </li>
         <li>
-          <NavLink to={ROUTES.DASHBOARD} exact activeClassName="selected">
+          <NavLink to={ROUTES.DASHBOARD} activeClassName="selected">
             Dashboard
           </NavLink>
         </li>

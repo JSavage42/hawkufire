@@ -29,7 +29,6 @@ main article a p {
   padding: 2rem;
   text-align: center;
   border: var(--list-p-border);
-  border-radius: var(--list-p-border-radius);
 }
 
 main article a p:hover {
@@ -56,14 +55,12 @@ a.btn,
 input.btn {
   background: var(--list-btn-background);
   border: var(--list-btn-border);
-  border-radius: var(--list-btn-border-radius);
   color: var(--list-btn-color);
   font-size: 2rem;
   padding: 0.75rem;
   text-decoration: none;
   display: block;
   margin: 1rem auto;
-  width: 30rem;
 }
 
 a.btn:hover,
@@ -89,4 +86,12 @@ textarea {
 
 input[type="time"] {
   width: 100%;
+}
+
+select {
+  width: 100%;
+  padding: 1rem;
+  border: 0;
+  font-size: 1.9rem;
+  font-weight: 700;
 }
