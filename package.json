@@ -1,9 +1,9 @@
 {
   "name": "hawku",
-  "version": "0.42.0",
+  "version": "1.0.0",
   "versionCodeName": "Phoenix",
   "homepage": "https://jsavage42.github.io/hawkufire",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "dependencies": {
     "@firebase/app-types": "^0.3.7",

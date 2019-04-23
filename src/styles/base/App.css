@@ -26,8 +26,9 @@ main article a p {
   background: var(--list-p-background-color);
   margin: 3rem;
   color: var(--list-a-color);
-  padding: 2rem;
+  padding: 2rem 2.5rem;
   text-align: center;
+  font-weight: 700;
   border: var(--list-p-border);
 }
 
@@ -35,7 +36,6 @@ main article a p:hover {
   cursor: pointer;
   background: var(--list-p-hover-background-color);
   color: var(--list-p-hover-font-color);
-  font-weight: 700;
 }
 
 article.edit {
@@ -57,7 +57,7 @@ input.btn {
   border: var(--list-btn-border);
   color: var(--list-btn-color);
   font-size: 2rem;
-  padding: 0.75rem;
+  padding: 1rem;
   text-decoration: none;
   display: block;
   margin: 1rem auto;

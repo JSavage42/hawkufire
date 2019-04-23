@@ -9,11 +9,16 @@ import { Link, withRouter } from "react-router-dom";
 // *** HOC and Context *** //
 import { withFirebase } from "../Firebase";
 
+// *** Styles *** //
+import "../../styles/components/SignUp.css";
+
 const SignUpPage = () => (
-  <div>
-    <h2>SignUp</h2>
-    <SignUpForm />
-  </div>
+  <main id="m-sign-up-page">
+    <article>
+      <h2>SignUp</h2>
+      <SignUpForm />
+    </article>
+  </main>
 );
 
 const INITIAL_STATE = {
