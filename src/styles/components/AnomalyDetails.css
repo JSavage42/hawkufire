@@ -1,6 +1,0 @@
-#anomaly_details p.description p {
-  border: 2px solid white;
-  margin: 1rem 10rem;
-  max-height: 30rem;
-  overflow: scroll;
-}

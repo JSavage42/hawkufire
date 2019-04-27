@@ -1,0 +1,33 @@
+type Competitor {
+  id: ID! @unique @id
+  name: String!
+  email: String!
+  role: String!
+}
+
+# type Anomaly {
+#   aid: ID! @unique @id
+#   title: String!
+#   description: String!
+#   image: String
+#   dueAt: DateTime!
+#   startedAt: DateTime
+#   assignedTo: Competitor
+#   completedAt: DateTime
+# }
+
+# type Competition {
+#   cid: ID! @unique @id
+#   title: String!
+#   semester: String!
+#   year: Int!
+#   location: String!
+#   numberOfCompetitors: Int!
+# }
+
+# type Team {
+#   tid: ID! @unique @id
+#   name: String!
+#   members: [Competitor]! @relation(name: "Members")
+#   captain: Competitor! @relation(name: "Captain")
+# }
